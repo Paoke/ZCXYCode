@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>云珠沙龙TIC</title>
+        <meta name="description" content="聚焦最具争议的商业创新" />   
+        <meta name="keywords" content="创业沙龙，众扶平台，创新创业，科技，想象力，资本" />  
+        <link rel="shortcut icon" href="{$smarty.const.INDEX_IMAGES_URL}favicon.ico">
+        <link rel="stylesheet" href="{$smarty.const.INDEX_CSS_URL}header_footer.css">
+        <link rel="stylesheet" href="{$smarty.const.INDEX_CSS_URL}spot.css">
+    </head>
+    <body>
+        {include file='Common/header.html'}
+        <div class="wrap">
+            <p class="title1">{$arrData['title']}</p>
+            {$arrData['content']}
+        </div>
+        {include file='Common/footer.html'}
+    </body>
+    <script src="{$smarty.const.INDEX_JS_URL}jquery-3.0.0.min.js"></script>
+    <script src="{$smarty.const.INDEX_JS_URL}header_footer.js"></script>
+</html>

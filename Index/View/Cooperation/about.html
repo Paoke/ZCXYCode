@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>云珠沙龙TIC</title>
+        <link rel="stylesheet" href="{$smarty.const.INDEX_CSS_URL}immediatelyJoin.css">
+        <link rel="stylesheet" href="{$smarty.const.INDEX_CSS_URL}header_footer.css">
+        <link rel="shortcut icon" href="{$smarty.const.INDEX_IMAGES_URL}favicon.ico">
+        <meta name="description" content="聚焦最具争议的商业创新" />   
+        <meta name="keywords" content="创业沙龙，众扶平台，创新创业，科技，想象力，资本" />  
+    </head>
+    <body>
+        {include file='Common/header.html'}
+        <div class="wrap">
+            <p class="media_p">关于主办方</p>
+            {$arrData['content']}
+            <div class="slon_intro3 clear">			
+                <div class="fl">
+                    <p class="intro_p">主题：科技、想象力、资本</p class="intro_p">
+                    <p class="intro_p">宗旨：研究企业创新转型，促进企业跨行业合作</p class="intro_p">
+                    <p class="intro_p">愿景：传播全球跨界创新思想、汇聚社会创变力量</p class="intro_p">
+                </div>
+                <div class="fr">
+                    <p class="intro_p2">关注云珠沙龙公众号</p>
+                    <img src="{$smarty.const.INDEX_IMAGES_URL}aboutUs_code.png" alt="">
+                </div>
+            </div>
+        </div>
+        {include file='Common/footer.html'}
+    </body>
+    <script type="text/javascript" src="{$smarty.const.ADMIN_LIB_JQUERY_JS_URL}jquery.min.js"></script>
+    <script src="{$smarty.const.INDEX_JS_URL}header_footer.js"></script>
+</html>

@@ -1,0 +1,79 @@
+/*created in 2017.07.03*/
+body{
+	background: #fff;
+	overflow-x:hidden; 
+}
+
+.content{
+	max-width: 1920px;
+	min-width: 1100px;
+}
+.content h1{
+	font-size: 48px;
+	font-family: "方正兰亭纤黑简体";
+	color:#191919; 
+	text-align: center;
+	margin: 80px auto;
+}
+.main{
+	width: 100%;
+}
+.main .introduce{
+	width: 50%;
+	background: #f7f7f7;
+	height: 430px;
+}
+.main .introImg{
+	width: 50%;
+	height: 430px;
+	position: relative;
+}
+
+.main .introduce p{
+	text-align: center;
+	font-size: 20px;
+	color: #404040;
+	margin-bottom: 12px;
+}
+.main .introduce h4{
+	text-align: center;
+	font-size: 40px;
+	color: #191919;
+	margin: 54px auto 20px;
+}
+/*.main .fl:after,.main .fr:after{
+    content: '';
+    display: block;
+    width: 34px;
+    height: 73px;
+    position: absolute;
+    top: 50%;
+    margin-top: -37px;
+    z-index: 3;
+}*/
+/*.main .fl:after{
+	right: -1px;
+	background: url(../images/arrowl.png) no-repeat;
+}
+.main .fr:after{
+	left: -1px;
+	background: url(../images/arrowR.png) no-repeat;
+}*/
+.jtr,.jtl{
+    content: '';
+    display: block;
+    width: 34px;
+    height: 73px;
+    position: absolute;
+    top: 50%;
+    margin-top: -37px;
+    z-index: 3;
+}
+.jtr{
+	right: -1px;
+	background: url(../images/arrowl.png) no-repeat;
+}
+.jtl{
+	left: -1px;
+	background: url(../images/arrowR.png) no-repeat;
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>云珠沙龙TIC</title>
+        <link rel="shortcut icon" href="{$smarty.const.INDEX_IMAGES_URL}favicon.ico">
+        <meta name="description" content="聚焦最具争议的商业创新" />   
+        <meta name="keywords" content="创业沙龙，众扶平台，创新创业，科技，想象力，资本" />  
+        <link rel="stylesheet" href="{$smarty.const.INDEX_CSS_URL}header_footer.css">
+        <link rel="stylesheet" href="{$smarty.const.INDEX_CSS_URL}livePhoto.css">
+    </head>
+    <body>
+        {include file='Common/header.html'}
+        <div class="wrap">
+            <p class="media_p">历届嘉宾</p>
+            {foreach $arrData as $k1=>$v1}
+            <ul class="brilliant_focus clear">
+                {foreach $v1 as $k2=>$v2}
+                
+                <li>
+                    <a href="{$smarty.const.__MODULE__}/Guest/speech?arid={$v2.arid}"><img src="{$smarty.const.PUBLIC_UPLOAD}{$v2.speechimg}" alt=""></a>
+                    <p class="brilliant_focus_name">{$v2.name} {$v2.job}</p>
+                    <p class="brilliant_focus_content"><a href="{$smarty.const.__MODULE__}/Guest/speech?arid={$v2.arid}">{$v2.title}</a></p>
+                </li>
+                
+                {/foreach}
+            </ul>
+           {/foreach}
+        </div>
+        {include file='Common/footer.html'}
+    </body>
+    <script src="{$smarty.const.INDEX_JS_URL}jquery-3.0.0.min.js"></script>
+    <script src="{$smarty.const.INDEX_JS_URL}header_footer.js"></script>
+    <script src="{$smarty.const.INDEX_JS_URL}details.js"></script>
+    <script>
+        $("ul li:nth-child(1)").css("margin-left","0px");  
+    </script>
+</html>

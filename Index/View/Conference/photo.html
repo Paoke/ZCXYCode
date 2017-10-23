@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="聚焦最具争议的商业创新" />   
+        <meta name="keywords" content="创业沙龙，众扶平台，创新创业，科技，想象力，资本" />  
+        <link rel="shortcut icon" href="{$smarty.const.INDEX_IMAGES_URL}favicon.ico">
+        <title>云珠沙龙TIC</title>
+        <link rel="stylesheet" href="{$smarty.const.INDEX_CSS_URL}header_footer.css">
+        <link rel="stylesheet" href="{$smarty.const.INDEX_CSS_URL}swiper.css">
+        <link rel="stylesheet" href="{$smarty.const.INDEX_CSS_URL}livePhoto.css">
+    </head>
+    <body>
+        {include file='Common/header.html'}
+        <div class="wrap">
+            <p class="media_p">
+                {if $spot=='spot1'}大会现场{/if}
+                {if $spot=='spot2'}演讲实录{/if}
+                {if $spot=='spot3'}合影留念{/if}
+            </p>
+
+            <div class="clear">
+                {foreach $arrData as $k1=>$v1}
+                <div class="fl photo">
+                    <img src="{$smarty.const.PUBLIC_UPLOAD}{$v1.img}" alt="">
+                </div>
+                {/foreach}
+            </div>
+        </div>
+        {include file='Common/footer.html'}
+    </body>
+    <script src="{$smarty.const.INDEX_JS_URL}jquery-3.0.0.min.js"></script>
+    <script src="{$smarty.const.INDEX_JS_URL}header_footer.js"></script>
+</html>

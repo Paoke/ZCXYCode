@@ -1,0 +1,182 @@
+.aboutTop{
+	max-width: 100%;
+	min-width: 1100px;
+	height: 360px;
+	position: relative;
+}
+.about_bg{
+	width: 100%;
+	min-width: 1100px;
+	height: 360px;
+	display: block;
+}
+
+.tabDiv{
+	width: 1100px;
+	position: absolute;
+	left: 50%;
+	-webkit-transform:translateX(-50%);
+	transform:translateX(-50%);
+	bottom: -45px;
+	z-index: 2;
+}
+.tabDiv_tab{
+	width: 275px;
+	height: 90px;
+	padding: 20px 20px 0 34px;
+	color: #333;
+	background: rgba(255,255,255,0.85);
+	cursor: pointer;
+	box-shadow: -2px 2px 20px 0px #5c5b70;
+}
+.jt{
+	font-family: NewDigital Original;
+	margin-left: 10px;
+	font-weight: 900;
+}
+.tabActive{
+	width: 275px;
+	height: 90px;
+	padding: 20px 20px 0 34px;
+	color: #fff;
+	background: rgba(43,87,197,0.8);
+	cursor: pointer;
+}
+.tabDiv_tab:hover{
+	color: #fff;
+	background: rgba(43,87,197,0.8);
+
+}
+.tabActive2{
+	width: 275px;
+	height: 90px;
+	padding: 20px 20px 0 34px;
+	color: #fff;
+	background: rgba(43,87,197,0.8);
+	cursor: pointer;
+}
+
+.tabDiv_tab span{
+	font-size: 28px;
+	margin-right: 13px;
+}
+.tabDiv_tab p{
+	margin-top: 8px;
+	font-size: 14px;
+}
+
+.tabContent{
+	width: 1100px;
+	margin:75px auto 0;
+	text-align: center;
+	display: none;
+}
+.a_class{
+	text-align: left;
+}
+.tab_content_title{
+	font-size: 48px;
+	font-family: "方正兰亭纤黑简体";
+	text-align: center;
+	margin: 32px 0 50px;
+}
+.school_intro{
+	width: 880px;
+	margin: 0 auto;
+	line-height: 1.5;
+	text-align: left;
+	text-indent: 2em;
+	color: #111;
+	font-size: 14px;
+}
+
+.content_title2{
+	font-size: 24px;
+	text-align: center;
+	margin: 46px 0 22px;
+}
+.commission{
+	width: 275px;
+}
+.commission p{
+	font-size: 22px;
+	color: #333;
+	margin: 18px 0 16px;
+}
+.commission li{
+	margin-bottom: 12px;
+	font-size: 14px;
+	color: #333;
+}
+.inputDiv{
+	width: 512px;
+	margin: 0 auto;
+	font-size: 0;
+	margin-top: 14px;
+}
+.inputDiv .inx{
+	font-size: 16px;
+	color: #333;
+	display: inline-block;
+	width: 120px;
+	height: 36px;
+	text-align: left;
+
+}
+.inputDiv input[type=text]{
+	width: 390px;
+	height: 34px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+
+}
+label{
+	color: #333;
+	font-size: 16px;
+}
+label span{
+	display: inline-block;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+.inputDiv input[type=radio]{
+	margin-left: 30px;
+}
+.inputDiv .star{
+	color: red;
+	margin-right: 10px;
+}
+.submit{
+	margin: 50px auto 70px;
+	width: 250px;
+	height: 52px;
+	color: #fff;
+	font-size: 24px;
+	background: #cbd0d7;
+	text-align: center;
+	line-height: 52px;
+	cursor: pointer;
+}
+.submit:hover{
+	background: #0154d1;
+}
+.tip{
+	  background: rgba(0,0,0,0.8);		
+	  width: 280px;
+	  height: 44px;
+	  border-radius: 4px;
+	  text-align: center;
+	  line-height: 44px;
+	  font-size: 14px;
+	  color:white;
+	  position: fixed;
+	  z-index: 9;
+	  top: 30%;
+	  left: 50%;
+	  -webkit-transform:translateX(-50%);
+	  transform:translateX(-50%);
+	}
+
+/*7.17*/
+.edit_content{width: 880px;margin: auto;}
+/*7.17*/

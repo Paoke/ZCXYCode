@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>中创学院 - 知行合一、创赢未来</title>
+	<meta name="description" content="中创学院（China Institute of Innovation，CII）是一个探索未来、主动创新，培育创新产业领军人的学院；一个产学研政经媒各种资源整合，协同创新、合作共赢的平台；一个具有“创新、产业、国家、民族”情怀的学院。" />   
+	<meta name="keywords" content="中创学院" /> 
+	<link rel="shortcut icon" href="{$Think.INDEX_IMAGES_URL}favicon.ico">
+	<link rel="stylesheet" href="{$Think.INDEX_CSS_URL}common.css">
+	<link rel="stylesheet" href="{$Think.INDEX_CSS_URL}vision.css">
+	<style>
+		.footer-bottom{
+			padding-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+    <include file="./Index/View/Common/header.html"/>
+
+	<div class="main clear" >
+		<div class="fl" style="width:820px;background:#fff;padding:0 36px 36px;margin-bottom: 58px;">
+			<h4 style="text-align:left;">{$arrData.title}</h4>
+			<div class="clear main_top">
+				<span class="pubishTime2 fl">时间：{$arrData.time}</span>
+				<span class="fr" style="color:#999;">作者：{$arrData.author}<span style="margin-left:42px;color: #999;">来源：{$arrData.from}</span></span>
+			</div>
+            {$arrData.content}
+			
+		</div>
+
+		<div class="fr">
+			<div class="interestingCase clear">
+				<img class="icon" src="{$Think.INDEX_IMAGES_URL}case-icon.png" alt="">
+				<span>可能感兴趣的</span>
+			</div>
+			<div class="xgCase">相关案例</div>
+
+            <foreach name="arrRelated" item="vo" key="k">
+                <a href="__CONTROLLER__/detail?caid={$vo.caid}">
+                    <div class="xgCaseDet">
+                        <p class="Det_p">{$vo.title}</p>
+                        <span class="Det_time">{$vo.time}</span>
+                    </div>
+                </a>
+            </foreach>
+		</div>
+        <include type="html" file="./Index/View/Common/footer.html" />
+	</div>
+</body>
+<script src="{$Think.INDEX_JS_URL}jquery-3.0.0.min.js"></script>
+<script src="{$Think.INDEX_JS_URL}common.js"></script>
+<script>
+    $('.navWrap .nav a').eq(4).addClass('active');
+</script>
+</html>

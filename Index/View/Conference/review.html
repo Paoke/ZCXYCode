@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>云珠沙龙TIC</title>
+        <meta name="description" content="聚焦最具争议的商业创新" />   
+        <meta name="keywords" content="创业沙龙，众扶平台，创新创业，科技，想象力，资本" />  
+        <link rel="shortcut icon" href="{$smarty.const.INDEX_IMAGES_URL}favicon.ico">
+        <link rel="stylesheet" href="{$smarty.const.INDEX_CSS_URL}header_footer.css">
+        <link rel="stylesheet" href="{$smarty.const.INDEX_CSS_URL}past.css">
+    </head>
+    <body>
+        {include file='Common/header.html'}
+        <div class="wrap">
+            <div class="banner">
+                <img class="banner_img" src="{$smarty.const.PUBLIC_UPLOAD}{$arrCons[0]['banner']}" alt="">
+            </div>
+            {foreach $arrYears as $k1}
+            <div class="year">{$k1}</div>
+            <div class="clear years">
+                {foreach $arrCons as $k2=>$v2}
+                    {if $v2.year==$k1}
+                    <div class="yearbox fl" onclick="detail({$v2.coid});">
+                        <img class="img_size" src="{$smarty.const.PUBLIC_UPLOAD}{$v2.intro_img}" alt="">
+                        <p class="yearBox_p">{$v2.name}</p>
+                        <div class="clear">
+                            <span class="year_span fl">{$v2.time}</span>
+                            <span class="year_span fr">{$v2.city}{$v2.area}</span>
+                        </div>
+                    </div>
+                    {/if}
+                {/foreach}
+            </div>
+            {/foreach}
+        </div>
+        {include file='Common/footer.html'}
+    </body>
+    <script src="{$smarty.const.INDEX_JS_URL}jquery-3.0.0.min.js"></script>
+    <script src="{$smarty.const.INDEX_JS_URL}header_footer.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".years").each(function(index, element) {
+                $(this).children("div").eq(0).css("margin-left","0px");
+            });
+        })
+        function detail(id){
+            window.location.href="{$smarty.const.__CONTROLLER__}/detail?coid="+id+"";
+        }
+    </script>
+</html>

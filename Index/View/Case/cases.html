@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>中创学院 - 知行合一、创赢未来</title>
+	<meta name="description" content="中创学院（China Institute of Innovation，CII）是一个探索未来、主动创新，培育创新产业领军人的学院；一个产学研政经媒各种资源整合，协同创新、合作共赢的平台；一个具有“创新、产业、国家、民族”情怀的学院。" />   
+	<meta name="keywords" content="中创学院" /> 
+	<link rel="shortcut icon" href="{$Think.INDEX_IMAGES_URL}favicon.ico">
+	<link rel="stylesheet" href="{$Think.INDEX_CSS_URL}common.css">
+	<link rel="stylesheet" href="{$Think.INDEX_CSS_URL}vision.css">
+</head>
+<body style="background:#fff;">
+
+	<include file="./Index/View/Common/header.html"/>
+
+	<input type="hidden" value="2" class="page" id="page" name="page">
+	<input type="hidden" value="{$arrPage.intPageCount}" class="intPageCount">
+	<div class="banner">
+		<p class="h2"><?php echo session('word')[3]['title'] ?></p>
+		<p style="max-width: 900px;"><?php echo session('word')[3]['content'] ?></p>
+	</div>
+	<div class="case_main">
+		<p class="title">课程案例</p>
+		<div class="clear cc">
+			<foreach name="arrData" item="vo" key="k">
+				<a class="_a fl" href="__CONTROLLER__/detail?caid={$vo.caid}" target="_blank">
+					<div class="section">
+						<div class="sec_top">
+							<img src="{$Think.PUBLIC_UPLOAD}{$vo.thumbimg}" alt="">
+							<div class="intro">
+								<p class="name">{$vo.speaker}</p>
+								<p class="pstion">{$vo.job}</p>
+								<div class="progress"></div>
+							</div>
+						</div>
+						<p class="dec">{$vo.title}</p>
+						<div class="clear">
+							<span class="fl">{$vo.time}</span>
+							<span class="fr">{$vo.position}</span>
+						</div>
+					</div>
+				</a>
+			</foreach>
+		</div>
+	</div>
+<include type="html" file="./Index/View/Common/footer.html" />
+
+</body>
+<script src="{$Think.INDEX_JS_URL}jquery-3.0.0.min.js"></script>
+<script src="{$Think.INDEX_JS_URL}common.js"></script>
+<script>
+	/*滚动加载*/
+    $(window).scroll(function () {
+        if ($(document).scrollTop() > ($(document).height() - $(window).height()) / 1.5) {
+            var page1 = GetQueryString('page');
+
+            if (page1 != null && page1 != '2') {
+                return false;
+            }
+            var page = $("#page").val();
+            var intPageCount = $('.intPageCount').val();
+            if (page <= intPageCount) {
+                $("#page").val((parseInt(page) + 1));
+                var data = {page: page};
+                $.post('more', data, function (ret) {
+                    var json = JSON.parse(ret);
+                    var code = "";
+                    for (var i = 0; i < json.length; i++) {
+                        code=code+'<a class="_a fl" href="/index.php/Index/Case/detail?caid='+json[i].caid+'" target="_blank">'+
+                            '<div class="section">'+
+                            '<div class="sec_top">'+
+                            '<img src="/Upload/'+json[i].thumbimg+'" alt="">'+
+                            '<div class="intro">'+
+                            '<p class="name">'+json[i].speaker+'</p>'+
+                        	'<p class="pstion">'+json[i].job+'</p>'+
+                        	'<div class="progress"></div>'+
+                            '</div>'+
+                            '</div>'+
+                            '<p class="dec">'+json[i].title+'</p>'+
+                        	'<div class="clear">'+
+                            '<span class="fl">'+json[i].time+'</span>'+
+                        	'<span class="fr">'+json[i].position+'</span>'+
+                        	'</div>'+
+							'</div>'+
+							'</a>';
+                    }
+                    $('.cc').append(code);
+                }, 'json');
+            } else {
+                return false;
+            }
+        }
+    });
+</script>
+</html>

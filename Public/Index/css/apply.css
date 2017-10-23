@@ -1,0 +1,126 @@
+/*reset*/
+body, h1, h2, h3, h4, h5, h6, p, dl, dd, ul, ol , input, textarea, th, td, select, form{margin:0; padding:0;}   
+em{font-size: normal;}
+li{list-style:none;}
+/*去除点击高亮*/
+a{text-decoration: none;-webkit-tap-highlight-color: transparent;}
+/*a标签点击样式*/
+a:hover,a:active,a:visited,a:link{-webkit-tap-highlight-color: transparent;}
+img{vertical-align: top;}
+
+textarea{resize:none;overflow: auto;}
+body{font-family: "方正兰亭黑简体","微软雅黑",Helvetica;overflow-x:hidden;background: #fff; }
+html{-webkit-text-size-adjust:none;}
+input:focus{border:none;outline:none}
+div{-webkit-box-sizing: border-box; box-sizing: border-box;}
+input,textarea{border:none;font-size:28px;font-family: "方正兰亭黑简体","微软雅黑",Helvetica;color:#666;padding-left: 10px;-webkit-box-sizing: border-box; box-sizing: border-box;}
+::-webkit-input-placeholder {font-size: 28px; color:#999;font-family: "方正兰亭黑简体","微软雅黑",Helvetica;}
+input[type=button]{	-webkit-appearance:none;-moz-appearance:none;outline:none;}	
+
+.tab_content_title{
+	font-size: 52px;
+	font-family: "方正兰亭纤黑简体";
+	text-align: center;
+	margin: 46px 0 64px;
+	color: #333;
+}
+.school_intro{
+	width: 880px;
+	margin: 0 auto;
+	line-height: 1.8;
+	text-align: left;
+	text-indent: 2em;
+	color: #4e4e4e;
+	font-size: 14px;
+}
+
+.content_title2{
+	font-size: 24px;
+	text-align: center;
+	margin: 46px 0 22px;
+}
+.commission{
+	width: 275px;
+}
+.commission p{
+	font-size: 22px;
+	color: #333;
+	margin: 18px 0 16px;
+}
+.commission li{
+	margin-bottom: 12px;
+	font-size: 14px;
+	color: #333;
+}
+.inputDiv{
+	width: 512px;
+	margin: 0 auto;
+	font-size: 0;
+	margin-top: 48px;
+}
+.inputDiv .inx{
+	font-size: 28px;
+	color: #333;
+	display: inline-block;
+	width: 120px;
+	height: 36px;
+	text-align: right;
+
+}
+.inputDiv input[type=text]{
+	width: 350px;
+	border-bottom: 1px solid #ccc;
+}
+
+label input{
+	width: 25px;
+	height: 25px;
+}
+label span{
+	display: inline-block;
+	margin-left: 5px;
+	font-size: 28px;
+}
+.inputDiv input[type=radio]{
+	margin-left: 30px;
+}
+.inputDiv .star{
+	color: red;
+	margin-right: 10px;
+}
+.submit{
+	margin: 70px auto 54px;
+	width: 480px;
+	height: 90px;
+	color: #fff;
+	font-size: 36px;
+	background: #cbd0d7;
+	text-align: center;
+	line-height: 90px;
+
+}
+.submit:active{
+	background: #0154d1;
+}
+.sumbit_tip{
+	font-size: 22px;
+	color: #999;
+	text-align: center;
+	padding-bottom: 40px;
+}
+.tip{
+	  background: rgba(0,0,0,0.8);		
+	  width: 280px;
+	  height: 44px;
+	  border-radius: 4px;
+	  text-align: center;
+	  line-height: 44px;
+	  font-size: 14px;
+	  color:white;
+	  position: fixed;
+	  z-index: 9;
+	  top: 30%;
+	  left: 50%;
+	  -webkit-transform:translateX(-50%);
+	  transform:translateX(-50%);
+	}

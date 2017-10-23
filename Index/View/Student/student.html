@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>中创学院 - 知行合一、创赢未来</title>
+	<meta name="description" content="中创学院（China Institute of Innovation，CII）是一个探索未来、主动创新，培育创新产业领军人的学院；一个产学研政经媒各种资源整合，协同创新、合作共赢的平台；一个具有“创新、产业、国家、民族”情怀的学院。" />   
+	<meta name="keywords" content="中创学院" /> 
+	<link rel="shortcut icon" href="{$Think.INDEX_IMAGES_URL}favicon.ico">
+	<link rel="stylesheet" href="{$Think.INDEX_CSS_URL}common.css">
+	<link rel="stylesheet" href="{$Think.INDEX_CSS_URL}index.css">
+</head>
+<body>
+    <include file="./Index/View/Common/header.html"/>
+
+	<input type="hidden" value="2" class="page" id="page" name="page">
+	<input type="hidden" value="{$arrPage.intPageCount}" class="intPageCount">
+	<div class="banner">
+		<p class="h2"><?php echo session('word')[2]['title'] ?></p>
+		<p><?php echo session('word')[2]['content'] ?></p>
+	</div>
+	
+	<div class="people">
+		<p class="comTie">优秀学员</p>
+		<div class="clear cc">
+			<foreach name="arrData" item="vo" key="k">
+				<div class="peoIntro fl">
+					<img src="{$Think.PUBLIC_UPLOAD}{$vo.header}" alt="">
+					<p class="name">{$vo.name}</p>
+					<p class="job">{$vo.job}</p>
+				</div>
+			</foreach>
+		</div>
+		<include type="html" file="./Index/View/Common/footer.html" />
+	</div>
+</body>
+<script src='{$Think.INDEX_JS_URL}jquery-3.0.0.min.js'></script>
+<script src="{$Think.INDEX_JS_URL}common.js"></script>
+<script>
+	/*滚动加载*/
+    $(window).scroll(function () {
+        if ($(document).scrollTop() > ($(document).height() - $(window).height()) / 1.5) {
+            var page1 = GetQueryString('page');
+
+            if (page1 != null && page1 != '2') {
+                return false;
+            }
+            var page = $("#page").val();
+            var intPageCount = $('.intPageCount').val();
+            if (page <= intPageCount) {
+                $("#page").val((parseInt(page) + 1));
+                var data = {page: page};
+                $.post('more', data, function (ret) {
+                    var json = JSON.parse(ret);
+                    var code = "";
+                    for (var i = 0; i < json.length; i++) {
+                        code=code+'<div class="peoIntro fl">'+
+                            '<img src="/Upload/'+json[i].header+'" alt="">'+
+                            '<p class="name">'+json[i].name+'</p>'+
+                            '<p class="job">'+json[i].job+'</p>'+
+                            '</div>';
+                    }
+                    $('.cc').append(code);
+                }, 'json');
+            } else {
+                return false;
+            }
+        }
+    });
+</script>
+</html>

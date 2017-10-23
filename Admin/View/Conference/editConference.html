@@ -1,0 +1,548 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>发起股权</title>
+        <link href="{$smarty.const.ADMIN_CSS_URL}public.css" rel="stylesheet" type="text/css">
+        <link href="{$smarty.const.ADMIN_CSS_URL}style1.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="{$smarty.const.SITE_PUBLIC_URL}Admin/uploadify/uploadify.css">
+        <link rel="stylesheet" type="text/css" href="{$smarty.const.ADMIN_STATIC_HUI_CSS_URL}H-ui.min.css"/>
+        <link rel="stylesheet" type="text/css" href="{$smarty.const.ADMIN_LIB_HUI_ICONFONT_CSS_URL}iconfont.css"/>
+        <style type="text/css">
+            body {
+                font: 14px Arial, Helvetica, Sans-serif;
+            }
+            .must{
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="Initiated_equity w1000">
+            <div style="height:30px;"></div>
+
+            <div class="Initiated_equity_con">
+               
+
+                <ul class="equity_menu clearfix">
+                    <li id="equity1" onClick="setTab('equity', 1, 5)" class='hover'>项目信息</li>
+
+
+                </ul>
+                <div id="con_equity_1" style="display:none">
+                    <div class="equity_list">
+                        <div id="questions">
+                            <ul>
+                                <li class="{if $itemnum==1}fold{/if}">
+                                    {if $itemnum==1}<h6><span>- 关闭</span>大会资料（必填）</h6>{else}<h5><span>+ 展开</span>大会资料（必填）</h5>{/if}
+
+                                    <div class="{if $itemnum==1}foldContent8{else}foldContent{/if}">
+
+                                        <form action="{$smarty.const.__CONTROLLER__}/editConference?coid={$arrData['coid']}" method="post" name="form1" id="form1">
+                                            <input type="hidden" id="province" name="province"/>
+                                            <input type="hidden" id="city" name="city"/>
+                                            <input type="hidden" id="area" name="area"/>
+                                            <input type="hidden" id="areaid" name="areaid">
+                                            <div class="equity_item4">
+                                                <p><i>大会名称<span class="must">*</span></i> <input type="text" class="e_input3" name="name" id="name" value="{$arrData['name']}"></p>
+                                                <p><i>大会时间<span class="must">*</span></i> <input type="text" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm:ss'})" class="input-text Wdate" id="time" name="time" style="width:250px;" value="{$arrData['time']}"></p>
+                                                <p><i>城市<span class="must">*</span></i><select id="seachprov" onChange="changeComplexProvince(this.value, sub_array, 'seachcity', 'seachdistrict');" style="width:110px;height:40px;">{$arrData['province']}</select>&nbsp;&nbsp;
+                                                    <select id="seachcity" onChange="changeCity(this.value, 'seachdistrict', 'seachdistrict');"style="width:110px;height:40px;"></select>&nbsp;&nbsp;
+                                                    <span id="seachdistrict_div"><select id="seachdistrict" style="width:110px;height:40px;"></select></p>
+                                                <p><i>详细地址<span class="must">*</span></i><input type="text" class="e_input3" name="position" id="position" value="{$arrData['position']}"></p>
+
+                                                <p><i>大会介绍<span class="must">*</span></i><textarea id="introduce" name="introduce" rows="50" cols="50">{$arrData['introduce']}</textarea></p>
+                                                <span style="margin-left: 110px;"></span><button type="button" onclick="getAreaNamebyID()" >保 存</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </li>
+                                <li class="{if $itemnum==2}fold{/if}">
+                                    {if $itemnum==2}<h6><span>- 关闭</span>往期回顾图片（必填）</h6>{else}<h5><span>+ 展开</span>往期回顾图片（必填）</h5>{/if}
+
+                                    <div class="{if $itemnum==2}foldContent8{else}foldContent{/if}">
+                                        <div class="equity_item5">
+                                            <form action="{$smarty.const.__CONTROLLER__}/reviewPic" enctype="multipart/form-data" method="post" name="form2" id="form2">
+                                                <div style="margin-right: 25px;margin-bottom: 10px;margin-top: 10px;">
+                                                    
+                                                    <p><i>往期回顾图1<span class="must">*</span></i><input type="file" name="review_img1" id="review_img1" style="border:none;" onchange="exitPic('review_img1',{$arrData['coid']})"><span class="must">(图片规格:420*950)</span></p>
+                                                    <p><i>往期回顾图2<span class="must">*</span></i><input type="file" id="review_img2" name="review_img2" style="border:none;" onchange="exitPic('review_img2',{$arrData['coid']})"><span class="must">(图片规格:420*950)</span></p>
+                                                   
+                                                        </form>
+                                                </div>
+                                        </div>
+                                </li>
+                                <li class="{if $itemnum==2}fold{/if}">
+                                    {if $itemnum==2}<h6><span>- 关闭</span>大会详情页图片（必填）</h6>{else}<h5><span>+ 展开</span>大会详情页图片（必填）</h5>{/if}
+
+                                    <div class="{if $itemnum==2}foldContent8{else}foldContent{/if}">
+                                        <div class="equity_item5">
+                                                <div style="margin-right: 25px;margin-bottom: 10px;margin-top: 10px;">
+                                                    
+                                                    <p><i>详情页banner图<span class="must">*</span></i><input type="file" name="banner" id="banner" style="border:none;" onchange="exitPic('banner',{$arrData['coid']})"><span class="must">(图片规格:1100*400)</span></p>
+                                                    <p><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 大会介绍图<span class="must">*</span></i><input type="file" id="intro_img" name="intro_img" style="border:none;" onchange="exitPic('intro_img',{$arrData['coid']})"><span class="must">(图片规格:382*218)</span></p>
+                                                    <p><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 大会亮点图<span class="must">*</span></i><input type="file" id="light_img" name="light_img" style="border:none;" onchange="exitPic('light_img',{$arrData['coid']})"><span class="must">(图片规格:1100*220)</span></p>
+                                                    <p><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 举办单位图<span class="must">*</span></i><input type="file" id="position_img" name="position_img" style="border:none;" onchange="exitPic('position_img',{$arrData['coid']})"><span class="must">(图片规格:1100*____)</span></p>
+                                                    <p><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 合作单位图<span class="must">*</span></i><input type="file" id="coope_img" name="coope_img" style="border:none;" onchange="exitPic('coope_img',{$arrData['coid']})"><span class="must">(图片规格:1100*____)</span></p>
+                                                </div>
+                                        </div>
+                                </li>
+
+                                <li class="{if $itemnum==3}fold{/if}">
+                                    {if $itemnum==3}<h6><span>- 关闭</span>特邀嘉宾（必填）</h6>{else}<h5><span>+ 展开</span>特邀嘉宾（必填）</h5>{/if}
+
+                                    <div class="{if $itemnum==3}foldContent8{else}foldContent{/if}">
+                                        <div class="equity_item5">
+                                            <form action="{$smarty.const.__CONTROLLER__}/guests?field=guest_ids&coid={$arrData['coid']}" method="post" name="form3" id="form3">
+                                                <input type='hidden' id='guest_ids' name='guest_ids' value="{$arrData['guest_ids']}">
+                                                    {foreach $arrGuest as $k1=>$v1}
+                                                    <input type='checkbox' id="guid{$v1.guid}" value="{$v1.guid}" onchange="guests(this,'guest_ids')" {foreach $arrData['guest_ids_array'] as $k3=>$v3}{if $v3==$v1.guid}checked{/if}{/foreach}><span>{$v1.name}</span>
+                                                    {/foreach}
+                                                    <br>
+                                                    <button type="button" onclick="uploadPic('form3');">保存</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="{if $itemnum==4}fold{/if}">
+                                    {if $itemnum==4}<h6><span>- 关闭</span>精彩聚焦（必填）</h6>{else}<h5><span>+ 展开</span>精彩聚焦（必填）</h5>{/if}
+
+                                    <div class="{if $itemnum==4}foldContent8{else}foldContent{/if}">
+                                        <div class="equity_item5">
+                                            <form action="{$smarty.const.__CONTROLLER__}/guests?field=focus_ids&coid={$arrData['coid']}" method="post" name="form4" id="form4">
+                                                 <input type='hidden' id='focus_ids' name='focus_ids' value="{$arrData['focus_ids']}">
+                                                {foreach $arrArticle as $k2=>$v2}
+                                                <input type='checkbox' id="arid{$v2.arid}" value="{$v2.arid}" onchange="guests(this,'focus_ids')" {foreach $arrData['focus_ids_array'] as $k4=>$v4}{if $v4==$v2.arid}checked{/if}{/foreach}><span>{$v2.title}</span><br>
+                                                {/foreach}
+                                                    <button type="button" onclick="uploadPic('form4');">保存</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+                                <li class="{if $itemnum==5}fold{/if}">
+                                    {if $itemnum==5}<h6><span>- 关闭</span>现场实录图（必填）</h6>{else}<h5><span>+ 展开</span>现场实录图（必填）</h5>{/if}
+
+                                    <div class="{if $itemnum==5}foldContent8{else}foldContent{/if}">
+
+                                        <div class="equity_item4">  
+                                            <div id="files">
+                                                <form action="{$smarty.const.__CONTROLLER__}/save_show" method="post" enctype="multipart/form-data" name="formcjz" id="formcjz" onSubmit="javascript:return checkpicture();">
+                                                    <p><i>模块选择<span class="must">*</span></i>
+                                                        <select id="spot" name="spot">
+                                                            <option value="0">请选择</option>
+                                                            <option value="spot1">大会现场</option>
+                                                            <option value="spot2">演讲实录</option>
+                                                            <option value="spot3">合影留念</option>
+                                                        </select>
+                                                    </p>
+                                                    <p><i>多图上传<span class="must">*</span></i></p> 
+                                                    <br><br>&nbsp; 
+                                                    <input id="file_upload" name="file_upload" type="file" multiple="true">
+                                                </form>
+
+                                            </div>
+                                            <div id='spot1' style="display:none;">
+                                                <table class="table table-border table-bordered table-hover table-bg table-sort">
+                                                    <thead>
+                                                        <tr class="text-c">
+                                                            <!--                            <th width="25"><input type="checkbox" name="" value=""></th>-->
+                                                            <th width="80">模块</th>
+                                                            <th width="100">图片</th>
+                                                            <th width="90">操作</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {foreach $arrSpot as $k5=>$v5}
+                                                            {if $v5.spot=='spot1'}
+                                                            <tr class="text-c">
+
+                                                                <td>大会现场</td>
+                                                                <td><a href="{$smarty.const.SITE_URL}Upload/{$v5.img}" target="_blank">{$smarty.const.SITE_URL}Upload/{$v5.img}</a></td>
+                                                                <td><a title="删除" href="javascript:;" onclick="spot_del(this, '{$v5.spid}')" class="ml-5" style="text-decoration:none"><i
+                                        class="Hui-iconfont">&#xe6e2;</i></a></td>
+                                                            </tr>
+                                                            {/if}
+                                                        {/foreach}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div id='spot2' style="display:none;">
+                                                <table class="table table-border table-bordered table-hover table-bg table-sort">
+                                                    <thead>
+                                                        <tr class="text-c">
+                                                            <!--                            <th width="25"><input type="checkbox" name="" value=""></th>-->
+                                                            <th width="80">模块</th>
+                                                            <th width="100">图片</th>
+                                                            <th width="90">操作</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {foreach $arrSpot as $k5=>$v5}
+                                                            {if $v5.spot=='spot2'}
+                                                            <tr class="text-c">
+
+                                                                <td>演讲实录</td>
+                                                                <td><a href="{$smarty.const.SITE_URL}Upload/{$v5.img}" target="_blank">{$smarty.const.SITE_URL}Upload/{$v5.img}</a></td>
+                                                                <td><a title="删除" href="javascript:;" onclick="spot_del(this, '{$v5.spid}')" class="ml-5" style="text-decoration:none"><i
+                                        class="Hui-iconfont">&#xe6e2;</i></a></td>
+                                                            </tr>
+                                                            {/if}
+                                                        {/foreach}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div id='spot3' style="display:none;">
+                                                <table class="table table-border table-bordered table-hover table-bg table-sort">
+                                                    <thead>
+                                                        <tr class="text-c">
+                                                            <!--                            <th width="25"><input type="checkbox" name="" value=""></th>-->
+                                                            <th width="80">模块</th>
+                                                            <th width="100">图片</th>
+                                                            <th width="90">操作</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {foreach $arrSpot as $k5=>$v5}
+                                                            {if $v5.spot=='spot3'}
+                                                            <tr class="text-c">
+
+                                                                <td>合影留念</td>
+                                                                <td><a href="{$smarty.const.SITE_URL}Upload/{$v5.img}" target="_blank">{$smarty.const.SITE_URL}Upload/{$v5.img}</a></td>
+                                                                <td><a title="删除" href="javascript:;" onclick="spot_del(this, '{$v5.spid}')" class="ml-5" style="text-decoration:none"><i
+                                        class="Hui-iconfont">&#xe6e2;</i></a></td>
+                                                            </tr>
+                                                            {/if}
+                                                        {/foreach}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+                                <li class="{if $itemnum==6}fold{/if}">
+                                    {if $itemnum==6}<h6><span>- 关闭</span>大会日程步骤（必填）</h6>{else}<h5><span>+ 展开</span>大会日程步骤（必填）</h5>{/if}
+
+                                    <div class="{if $itemnum==6}foldContent8{else}foldContent{/if}">
+                                        <div class="equity_item4">  
+                                            <div id="files">
+                                                <form action="{$smarty.const.__CONTROLLER__}/schedule" method="post" name="formxwadd" id="formxwadd">
+                                                    <input type="hidden" name="content" id="content"/>
+                                                    <p><i>步骤选择<span class="must">*</span></i>
+                                                        <select id="scid" name="scid">
+                                                            <option value="">请选择</option>
+                                                            {foreach $arrSchedule as $k6=>$v6}
+                                                            <option value="{$v6.scid}">{$v6.title}</option>
+                                                            {/foreach}
+                                                        </select>
+                                                    </p>
+                                                    <p><i>节目标题<span class="must">*</span></i> <input type="text" class="e_input3" name="title" id="title"></p>
+                                                    <p><i>举办地点<span class="must">*</span></i> <input type="text" class="e_input3" name="positions" id="positions"></p>
+                                                    <script id="editor" type="text/plain" style="width:1150px;height:600px;"></script> 
+                                                    <button type="button" onclick="schedules();">保存</button>
+                                                </form>
+                                            </div>     
+                                        </div>            
+
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!--<div class="next"><button style="width:auto; padding:0 20px;">保存并开始填写融资信息</button></div>-->
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="{$smarty.const.ADMIN_LIB_JQUERY_JS_URL}jquery.min.js"></script>
+    <script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}tab.js"></script>
+    <script src="{$smarty.const.ADMIN_JS_URL}jquery.kinMaxShow-1.0.min.js" type="text/javascript"></script>
+    <script src="{$smarty.const.ADMIN_JS_URL}Calendar3.js" type="text/javascript"></script>
+    <script src="{$smarty.const.ADMIN_JS_URL}Area.js" type="text/javascript"></script>
+    <script src="{$smarty.const.ADMIN_JS_URL}AreaData_min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}script.js"></script>
+    <script src="{$smarty.const.SITE_PUBLIC_URL}Admin/uploadify/jquery.uploadify.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}jquery.form.js"></script>
+    <script type="text/javascript" src="{$smarty.const.ADMIN_LIB_LAYER_JS_URL}layer.js"></script>
+    <script type="text/javascript" src="{$smarty.const.ADMIN_LIB_UEDITOR_JS_URL}ueditor.config.js"></script>
+    <script type="text/javascript" src="{$smarty.const.ADMIN_LIB_UEDITOR_JS_URL}ueditor.all.min.js"></script>
+    <script type="text/javascript" src="{$smarty.const.ADMIN_LIB_UEDITOR_JS_URL}lang/zh-cn/zh-cn.js"></script>
+    <script>
+        $(function () {
+            $('#file_upload').uploadify({
+                buttonText:'选择文件',//按钮
+                swf: '{$smarty.const.SITE_PUBLIC_URL}Admin/uploadify/uploadify.swf',
+                uploader: '{$smarty.const.__CONTROLLER__}/Upload?session_id={$smarty.session.session_id}',
+                method:'get',//提交方式
+                onSWFReady:function(){
+                    $('#file_upload').uploadify('disable', true);
+
+                },
+                onUploadStart:function(file){
+                    var spot=$('#spot').val();
+                    var coid={$arrData['coid']};
+                    $("#file_upload").uploadify("settings", "formData", { 'spot' : spot,'coid':coid});   
+                },
+                onUploadSuccess:function(file, data, response){
+                }
+            });
+
+            $('#spot').change(function(){
+                var spot=$(this).val();
+                if(spot=='0'){
+                    $('#file_upload').uploadify('disable', true);
+                }else{
+                    $('#file_upload').uploadify('disable', false);
+                }
+            });
+            $('#spot').change(function(){
+                var spot=$(this).val();
+                if(spot=='spot1'){
+                    $('#spot1').show();
+                    $('#spot2').hide();
+                    $('#spot3').hide();
+                }
+                if(spot=='spot2'){
+                    $('#spot1').hide();
+                    $('#spot2').show();
+                    $('#spot3').hide();
+                }
+                if(spot=='spot3'){
+                    $('#spot1').hide();
+                    $('#spot2').hide();
+                    $('#spot3').show();
+                }
+            });
+            $('#scid').change(function(){
+                
+                  var schedule=$(this).val();
+                  {foreach $arrSchedule as $k7=>$v7}
+                    if('{$v7.scid}'==schedule){
+                        $('#title').val('{$v7.title}');
+                        $('#positions').val('{$v7.position}');
+                        UE.getEditor('editor').setContent(''); 
+                        UE.getEditor('editor').execCommand('insertHtml', '{$v7.schedule}');
+                    }
+                  {/foreach}
+                  
+//                var schedule=$(this).val();
+//                if(schedule=='schedule1'){
+//                    $('#title').val('{$arrData['title1']}');
+//                    $('#positions').val('{$arrData['position1']}');
+//                    UE.getEditor('editor').setContent(''); 
+//                    UE.getEditor('editor').execCommand('insertHtml', '{$arrData['schedule1']}');
+//                }
+//                if(schedule=='schedule2'){
+//                    $('#title').val('{$arrData['title2']}');
+//                    $('#positions').val('{$arrData['position2']}');
+//                    UE.getEditor('editor').setContent('');
+//                    UE.getEditor('editor').execCommand('insertHtml', '{$arrData['schedule2']}');
+//                }
+//                if(schedule=='schedule3'){
+//                    $('#title').val('{$arrData['title3']}');
+//                    $('#positions').val('{$arrData['position3']}');
+//                    UE.getEditor('editor').setContent('');
+//                    UE.getEditor('editor').execCommand('insertHtml', '{$arrData['schedule3']}');
+//                }
+            });
+            initComplexArea('seachprov', 'seachcity', 'seachdistrict', area_array, sub_array, "{$arrData['provinceid']}", "", '0');
+            setTab('equity', 1, 5);
+            
+            
+               
+        });    
+        //实例化编辑器
+        //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+        var ue = UE.getEditor('editor');
+        function getLocalData () {
+            //document.getElementById("content").value=UE.getEditor('editor').execCommand( "getlocaldata" );
+            document.getElementById("content").value = UE.getEditor('editor').getContent();
+        }
+        function schedules(){
+                getLocalData();
+                var title=$('#title').val();
+                var position=$('#positions').val();
+                var scid=$('#scid').val();
+                var content=$('#content').val();
+                if(title==""||position==""||scid==null||content==""){
+                    layer.msg('请把资料填写完整!', { icon: 1, time: 1500});
+                    return false;
+                }
+                var data={ title:title,position:position,schedule:content,scid:scid};
+//                if(schedule=="schedule1"){
+//                    var data={ title1:title,position1:position,schedule1:content,coid:{$arrData['coid']}};
+//                }else if(schedule=="schedule2"){
+//                    var data={ title2:title,position2:position,schedule2:content,coid:{$arrData['coid']}};
+//                }else{
+//                    var data={ title3:title,position3:position,schedule3:content,coid:{$arrData['coid']}};
+//                } 
+                $.post('/index.php/Admin/Conference/scheduleEdit',data,function(ret){
+                    if(ret=='true'){
+                        layer.msg('上传成功!', { icon: 1, time: 1500},function(){
+                            window.location.reload();
+                        });
+                    }else{
+                        layer.msg('上传失败!', { icon: 1, time: 1500});
+                    }
+                },'json');
+            }
+        function guests(obj,id){
+                var guest_ids=$('#'+id).val();
+                if($(obj).is(':checked')){
+                    guest_ids=guest_ids+$(obj).val()+',';
+                }else{
+                    guest_ids=guest_ids.replace($(obj).val()+',','');
+                    
+                }
+                $('#'+id).val(guest_ids);
+            }
+        //得到地区码
+            function getAreaID() {
+                var area = 0;
+                if ($("#seachdistrict").val() != "0") {
+                    area = $("#seachdistrict").val();
+                } else if ($("#seachcity").val() != "0") {
+                    area = $("#seachcity").val();
+                } else {
+                    area = $("#seachprov").val();
+                }
+                return area;
+            }
+
+            function showAreaID() {
+                //地区码
+                var areaID = getAreaID();
+                //地区名
+                var areaName = getAreaNamebyID(areaID);
+                alert("您选择的地区码：" + areaID);
+            }
+
+        //根据地区码查询地区名
+            function getAreaNamebyID() {
+                var province = "";
+                var city = "";
+                var area = "";
+                //地区码
+                var areaID = getAreaID();
+                if (areaID.length == 2) {
+                    province = area_array[areaID];
+                } else if (areaID.length == 4) {
+                    var index1 = areaID.substring(0, 2);
+                    province = area_array[index1];
+                    city = sub_array[index1][areaID];
+                } else if (areaID.length == 6) {
+                    var index1 = areaID.substring(0, 2);
+                    var index2 = areaID.substring(0, 4);
+                    province = area_array[index1];
+                    city = sub_array[index1][index2];
+                    area = sub_arr[index2][areaID];
+                }
+                $("#province").val(province);
+                $("#city").val(city);
+                $("#area").val(area);
+                $("#areaid").val(areaID);
+                if(city==""||area==""){
+                    layer.msg('请选择城市', { icon: 1, time: 1500});
+                    return false;
+                }
+                $('#form1').ajaxSubmit({
+                    dataType:"json",
+                    beforeSend: function () {
+
+                    },
+                    uploadProgress: function (event, position, total, percentComplete) {
+
+                    },
+                    success: function (data) {
+                        if(data=='true'){
+                            layer.msg('上传成功!', { icon: 1, time: 1500},function(){
+                                window.location.reload();
+                            });
+                        }else{
+                            layer.msg('上传失败!', { icon: 1, time: 1500});
+                        }
+                    },
+                    error: function (xhr) {
+                        
+                    }
+                    
+                });
+            }
+            function exitPic(id,coid){
+                if($('#m'+id).length > 0){
+                    
+                }else{
+                    $("#"+id).wrap("<form id='m"+id+"' action='/index.php/Admin/Conference/exitPic?type="+id+"&coid="+coid+"' method='post' enctype='multipart/form-data'></form>");
+
+                }
+                $('#m'+id).ajaxSubmit({
+                    dataType:"json",
+                    beforeSend: function () {
+
+                    },
+                    uploadProgress: function (event, position, total, percentComplete) {
+
+                    },
+                    success: function (data) {
+                        if(data=='true'){
+                            layer.msg('上传成功!', { icon: 1, time: 1000},function(){
+                                window.location.reload();
+                            });
+                        }else{
+                            layer.msg('上传失败!', { icon: 1, time: 1500});
+                        }
+                    },
+                    error: function (xhr) {
+                        
+                    }
+                });
+            } 
+            function uploadPic(id){
+                $('#'+id).ajaxSubmit({
+                    dataType:"json",
+                    beforeSend: function () {
+
+                    },
+                    uploadProgress: function (event, position, total, percentComplete) {
+
+                    },
+                    success: function (data) {
+                        if(data=='true'){
+                            layer.msg('上传成功!', { icon: 1, time: 1500},function(){
+                                window.location.reload();
+                            });
+                        }else{
+                            layer.msg('上传失败!', { icon: 1, time: 1500});
+                        }
+                    },
+                    error: function (xhr) {
+                        
+                    }
+                });
+            } 
+            function spot_del(obj, id) {
+
+                layer.confirm('确认要删除吗？', function (index) {
+                var spid = id;
+                var data = { spid: spid};
+                $.post('/index.php/Admin/Conference/delSpotPic', data, function (ret) {
+                    if (ret == 'true') {
+                        $(obj).parents("tr").remove();
+                        layer.msg('已删除!', { icon: 1, time: 1000});
+                    } else {
+                            layer.msg('删除失败!', { icon: 2, time: 1000});
+                    }
+
+                }, 'json');
+
+              });
+            }
+        </script>
+</html>

@@ -1,0 +1,457 @@
+[ 2017-07-31T15:43:30+08:00 ] 127.0.0.1 /index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-31T15:43:30+08:00 ] 127.0.0.1 /index.php/Admin/login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-07-31T15:43:35+08:00 ] 127.0.0.1 /index.php/Admin/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `zcxy_admin` [ RunTime:0.0260s ]
+SQL: SELECT * FROM `zcxy_admin` WHERE ( adminusername='webadmin' and password='webadmin' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `zcxy_admin` SET `lastlogin`='2017-07-31 15:43:35',`lastip`='127.0.0.1',`logintime`='54' WHERE ( adminusername='webadmin' and password='webadmin' ) [ RunTime:0.0060s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-31T15:43:36+08:00 ] 127.0.0.1 /index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.059004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-31T15:43:36+08:00 ] 127.0.0.1 /index.php/Admin/Index/welcome
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-07-31T15:43:39+08:00 ] 127.0.0.1 /index.php/Admin/Case/articleList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `zcxy_case` [ RunTime:0.0280s ]
+SQL: SELECT `caid`,`title`,`position`,`status`,`speaker`,`from`,`time` FROM `zcxy_case`  [ RunTime:0.0650s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.059003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-07-31T15:43:40+08:00 ] 127.0.0.1 /index.php/Admin/Case/addArticle
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-07-31T15:43:54+08:00 ] 127.0.0.1 /index.php/Admin/View/uploadPic?type=thumbimg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\ZCXYCode\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-31T15:44:17+08:00 ] 127.0.0.1 /index.php/Admin/Case/addArticle
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `zcxy_case` [ RunTime:0.0040s ]
+SQL: INSERT INTO `zcxy_case` (`content`,`title`,`speaker`,`job`,`from`,`author`,`position`,`time`,`status`,`thumbimg`) VALUES ('<p><embed type=\"application/x-shockwave-flash\" class=\"edui-faked-music\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" src=\"http://box.baidu.com/widget/flash/bdspacesong.swf?from=tiebasongwidget&url=&name=Stuttering&artist=Jazmine%20Sullivan&extra=Love%20Me%20Back&autoPlay=false&loop=true\" width=\"400\" height=\"95\" align=\"none\" wmode=\"transparent\" play=\"true\" loop=\"false\" menu=\"false\" allowscriptaccess=\"never\" allowfullscreen=\"true\"/></p>','asdf','asdf','asdf','asdf','asdf','asdf','2017-07-31','1','20170731/597edfba64e35.png') [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-31T15:44:53+08:00 ] 127.0.0.1 /index.php/Admin/Case/articleList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `zcxy_case` [ RunTime:0.0040s ]
+SQL: SELECT `caid`,`title`,`position`,`status`,`speaker`,`from`,`time` FROM `zcxy_case`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-07-31T15:44:56+08:00 ] 127.0.0.1 /index.php/Admin/Case/editArticle?caid=18
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `zcxy_case` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `zcxy_case` WHERE ( caid=18 ) LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.113006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.113006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004001s ]
+
+[ 2017-07-31T15:44:59+08:00 ] 127.0.0.1 /index.php/Admin/Case/articleList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `zcxy_case` [ RunTime:0.0050s ]
+SQL: SELECT `caid`,`title`,`position`,`status`,`speaker`,`from`,`time` FROM `zcxy_case`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-07-31T15:45:00+08:00 ] 127.0.0.1 /index.php/Admin/Case/editArticle?caid=19
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `zcxy_case` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `zcxy_case` WHERE ( caid=19 ) LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-07-31T15:46:03+08:00 ] 127.0.0.1 /index.php/Admin/Case/articleList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `zcxy_case` [ RunTime:0.0050s ]
+SQL: SELECT `caid`,`title`,`position`,`status`,`speaker`,`from`,`time` FROM `zcxy_case`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-31T15:46:05+08:00 ] 127.0.0.1 /index.php/Admin/Case/seeArticle?arid=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:seeArticle
+
+[ 2017-07-31T15:46:07+08:00 ] 127.0.0.1 /index.php/Admin/Case/articleList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `zcxy_case` [ RunTime:0.0060s ]
+SQL: SELECT `caid`,`title`,`position`,`status`,`speaker`,`from`,`time` FROM `zcxy_case`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+NOTIC: [8] Undefined variable: v1 D:\xampp\htdocs\ZCXYCode\Runtime\Cache\Admin\7bda2456dc36b1c8770ebf5baeaafff5.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-31T15:46:08+08:00 ] 127.0.0.1 /index.php/Admin/Case/editArticle?caid=19
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `zcxy_case` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `zcxy_case` WHERE ( caid=19 ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-31T15:47:43+08:00 ] 127.0.0.1 /index.php/Admin/Case/editArticle?caid=19
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `zcxy_case` [ RunTime:0.0040s ]
+SQL: UPDATE `zcxy_case` SET `caid`='19',`content`='<p><embed type=\"application/x-shockwave-flash\" class=\"edui-faked-music\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" src=\"http://box.baidu.com/widget/flash/bdspacesong.swf?from=tiebasongwidget&url=&name=Stuttering&artist=Jazmine%20Sullivan&extra=Love%20Me%20Back&autoPlay=false&loop=true\" width=\"400\" height=\"95\" align=\"none\" wmode=\"transparent\" play=\"true\" loop=\"false\" menu=\"false\" allowscriptaccess=\"never\" allowfullscreen=\"true\"/></p>',`title`='asdf',`speaker`='asdf',`job`='asdf',`from`='asdf',`author`='asdf',`position`='asdf',`time`='2017-07-31',`thumbimg`='20170731/597edfba64e35.png' WHERE ( caid=19 ) [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-31T15:48:07+08:00 ] 127.0.0.1 /index.php/Admin/Case/editArticle?caid=19
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `zcxy_case` [ RunTime:0.0060s ]
+SQL: UPDATE `zcxy_case` SET `caid`='19',`content`='<p>dfsd<embed type=\"application/x-shockwave-flash\" class=\"edui-faked-music\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" src=\"http://box.baidu.com/widget/flash/bdspacesong.swf?from=tiebasongwidget&url=&name=Stuttering&artist=Jazmine%20Sullivan&extra=Love%20Me%20Back&autoPlay=false&loop=true\" width=\"400\" height=\"95\" align=\"none\" wmode=\"transparent\" play=\"true\" loop=\"false\" menu=\"false\" allowscriptaccess=\"never\" allowfullscreen=\"true\"/></p>',`title`='asdf',`speaker`='asdf',`job`='asdf',`from`='asdf',`author`='asdf',`position`='asdf',`time`='2017-07-31',`thumbimg`='20170731/597edfba64e35.png' WHERE ( caid=19 ) [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-31T15:50:54+08:00 ] 127.0.0.1 /index.php/Admin/Case/editArticle?caid=19
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `zcxy_case` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `zcxy_case` WHERE ( caid=19 ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-31T15:51:26+08:00 ] 127.0.0.1 /index.php/Admin/Case/editArticle?caid=19
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `zcxy_case` [ RunTime:0.0050s ]
+SQL: UPDATE `zcxy_case` SET `caid`='19',`content`='<p>dfsddgf<embed type=\"application/x-shockwave-flash\" class=\"edui-faked-music\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" src=\"http://box.baidu.com/widget/flash/bdspacesong.swf?from=tiebasongwidget&url=&name=%E5%90%AC%E5%A6%88%E5%A6%88%E7%9A%84%E8%AF%9D&artist=%E5%91%A8%E6%9D%B0%E4%BC%A6&extra=%E6%96%B0%E7%B2%BE%E9%80%89%20New%20Greatest%20Hits%20II&autoPlay=false&loop=true\" width=\"400\" height=\"95\" align=\"none\" wmode=\"transparent\" play=\"true\" loop=\"false\" menu=\"false\" allowscriptaccess=\"never\" allowfullscreen=\"true\"/></p>',`title`='asdf',`speaker`='asdf',`job`='asdf',`from`='asdf',`author`='asdf',`position`='asdf',`time`='2017-07-31',`thumbimg`='20170731/597edfba64e35.png' WHERE ( caid=19 ) [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+

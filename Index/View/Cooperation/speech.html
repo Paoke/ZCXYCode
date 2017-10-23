@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>云珠沙龙TIC</title>
+        <link rel="shortcut icon" href="{$smarty.const.INDEX_IMAGES_URL}favicon.ico">
+        <meta name="description" content="聚焦最具争议的商业创新" />   
+        <meta name="keywords" content="创业沙龙，众扶平台，创新创业，科技，想象力，资本" /> 
+        <link rel="stylesheet" href="{$smarty.const.INDEX_CSS_URL}immediatelyJoin.css">
+        <link rel="stylesheet" href="{$smarty.const.INDEX_CSS_URL}header_footer.css">
+        <link rel="stylesheet" href="{$smarty.const.SITE_PUBLIC_URL}Admin/lib/layer/2.1/skin/layer.css">
+        <style>
+            .layui-layer-dialog .layui-layer-content
+            {
+                color: #000;
+            }
+        </style>
+    </head>
+    <body>
+        {include file='Common/header.html'}
+        <div class="wrap">
+            <div class="media_input">
+                <p class="media_p">TIC跨界创新大会演讲申请</p>
+                <div class="_inp clear">
+                    <span class="_inp_span fl">真实姓名</span>
+                    <input class="inp_input fl" id="name" name="name" type="text" placeholder="请输入您的姓名">
+                </div>
+
+                <div class="_inp clear">
+                    <span class="_inp_span fl">手机号码</span>
+                    <input class="inp_input fl" id="phone" name="phone" type="text" placeholder="请输入您的电话号码">
+                </div>
+
+                <div class="_inp clear">
+                    <span class="_inp_span fl">电子邮箱</span>
+                    <input class="inp_input fl" id="email" name="email" type="text" placeholder="请输入您的邮箱地址">
+                </div>
+
+                <div class="_inp clear">
+                    <span class="_inp_span fl">职 &nbsp; &nbsp; &nbsp;  位</span>
+                    <input class="inp_input fl" id="job" name="job" type="text" placeholder="请输入您的公司职位">
+                </div>
+
+                <div class="_inp clear">
+                    <span class="_inp_span fl">公司名称</span>
+                    <input class="inp_input fl" id="company" name="company" type="text" placeholder="请输入您的公司名称">
+                </div>
+            </div>
+            <textarea class="_tex" name="" id="introduce" name="introduce" cols="30" rows="10" placeholder="演讲者简介"></textarea>
+            <div class="submit-btn">
+                提交
+            </div>
+        </div>
+
+        {include file='Common/footer.html'}
+    </body>
+    <script src="{$smarty.const.INDEX_JS_URL}jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}jquery.form.js"></script>
+    <script type="text/javascript" src="{$smarty.const.ADMIN_LIB_LAYER_JS_URL}layer.js"></script>
+    <script src="{$smarty.const.INDEX_JS_URL}header_footer.js"></script>
+    <script src="{$smarty.const.INDEX_JS_URL}immediatelyJoin.js"></script>
+    {literal}
+    <script>
+        $('.submit-btn').on('click', function () {
+            var name = $('#name').val();
+            var phone = $('#phone').val();
+            var email = $('#email').val();
+            var job = $('#job').val();
+            var company = $('#company').val();
+            var introduce = $('#introduce').val();
+            if (name == "" || phone == "" || email == "" || job == "" || company == "" || introduce == "") {
+                layer.msg('请把资料填写完整！', {icon: 7, time: 2500});
+                return false;
+            }
+            var data = {name: name, phone: phone, email: email, job: job, company: company, introduce:introduce};
+            $.post('/index.php/Index/Cooperation/speech', data, function (ret) {
+                if (ret == '1') {
+                    layer.msg('提交成功！', {icon: 1, time: 1000}, function () {
+                        window.location.reload();
+                    });
+
+                } else {
+                    layer.msg('提交失败！', {icon: 2, time: 1000});
+                    return false;
+                }
+            }, 'json');
+        });
+    </script>
+    {/literal}
+</html>

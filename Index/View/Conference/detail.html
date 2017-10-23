@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>云珠沙龙TIC</title>
+    <meta name="description" content="聚焦最具争议的商业创新"/>
+    <meta name="keywords" content="创业沙龙，众扶平台，创新创业，科技，想象力，资本"/>
+    <link rel="shortcut icon" href="{$smarty.const.INDEX_IMAGES_URL}favicon.ico">
+    <link rel="stylesheet" href="{$smarty.const.INDEX_CSS_URL}header_footer.css">
+    <link rel="stylesheet" href="{$smarty.const.INDEX_CSS_URL}details.css">
+    <link rel="stylesheet" href="{$smarty.const.INDEX_CSS_URL}swiper.css">
+    <style>
+        td {
+            font-size: 18px;
+            border: 1px solid #5b5b5b;
+            padding: 15px 25px 15px 30px;
+            line-height: 1.5;
+            height: 0px;
+        }
+
+        tr td:nth-child(2) {
+            color: #5aebfc;
+        }
+
+        tr:first-child td:nth-child(2) {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+{include file='Common/header.html'}
+<!-- 	<iframe class="iframe" src="nav.html "width="100%" height="70" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe> -->
+<div class="banner">
+    <img src="{$smarty.const.PUBLIC_UPLOAD}{$arrData['banner']}" alt="">
+</div>
+
+<div class="main">
+    <div class="content">
+        <div class="title clear">
+            <img class="yellow_line fl" src="{$smarty.const.INDEX_IMAGES_URL}yellow.png" alt="">
+            <span class="title_span fl">大会介绍</span>
+        </div>
+        <div class="introduction clear">
+            <p class="introduction_p fl">
+                {$arrData['introduce']}
+            </p>
+            <img class="fr" src="{$smarty.const.PUBLIC_UPLOAD}{$arrData['intro_img']}" alt="">
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="title clear">
+            <img class="yellow_line fl" src="{$smarty.const.INDEX_IMAGES_URL}yellow.png" alt="">
+            <span class="title_span fl">大会亮点</span>
+        </div>
+        <div class="light">
+            <img class="light_img" src="{$smarty.const.PUBLIC_UPLOAD}{$arrData['light_img']}" alt="">
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="title clear">
+            <img class="yellow_line fl" src="{$smarty.const.INDEX_IMAGES_URL}yellow.png" alt="">
+            <span class="title_span fl">特邀嘉宾</span>
+        </div>
+
+        <div class="swiper-container" id="swiper-container1">
+            <div class="swiper-wrapper">
+                {foreach $arrGuest as $k=>$v}
+
+                <div class="swiper-slide">
+                    <ul class="guestDiv" {if {$v|@count}
+                    <6}style="height:315px;"{/if}>
+                    {foreach $v as $k1=>$v1}
+                    <li>
+                        <img src="{$smarty.const.PUBLIC_UPLOAD}{$v1.listimg}" alt="">
+                        <p class="guest_name">{$v1.name}</p>
+                        <p class="guest_position">{$v1.job}</p>
+                    </li>
+                    {/foreach}
+                    </ul>
+                </div>
+                {/foreach}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+
+        <!-- 			<div class="ctrlDiv clear">
+                        <div class="ctrl1 fl"></div>
+                        <div class="ctrl2 fl"></div>
+                        <div class="ctrl3 fl"></div>
+                    </div>  -->
+    </div>
+
+    {if $arrFocus[0]==""}
+    {else}
+    <div class="content">
+        <div class="title clear">
+            <img class="yellow_line fl" src="{$smarty.const.INDEX_IMAGES_URL}yellow.png" alt="">
+            <span class="title_span fl">精彩聚焦</span>
+        </div>
+        <div class="swiper-container" id="swiper-container2">
+            <div class="swiper-wrapper">
+                {foreach $arrFocus as $k2=>$v2}
+                <div class="swiper-slide">
+                    <ul class="brilliant_focus">
+                        {foreach $v2 as $k3=>$v3}
+                        <li>
+                            <a href="{$smarty.const.__MODULE__}/Guest/speech?arid={$v3.arid}" target="_blank"><img
+                                    src="{$smarty.const.PUBLIC_UPLOAD}{$v3.speechimg}" alt=""></a>
+                            <p class="brilliant_focus_name">{$v3.name} {$v3.job}</p>
+                            <p class="brilliant_focus_content"><a
+                                    href="{$smarty.const.__MODULE__}/Guest/speech?arid={$v3.arid}" target="_blank">{$v3.title}</a>
+                            </p>
+                        </li>
+                        {/foreach}
+                    </ul>
+                </div>
+                {/foreach}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    {/if}
+
+    {if $arrSpot[0]==""}
+    {else}
+    <div class="content">
+        <div class="title clear">
+            <img class="yellow_line fl" src="{$smarty.const.INDEX_IMAGES_URL}yellow.png" alt="">
+            <span class="title_span fl">现场实录</span>
+        </div>
+        <div class="spot_record clear">
+            {foreach $arrSpot as $k4=>$v4}
+            <div class="fl">
+                <a href="{$smarty.const.__CONTROLLER__}/photo?coid={$v4.coid}&spot={$v4.spot}"><img class="spot_img"
+                                                                                                    src="{$smarty.const.PUBLIC_UPLOAD}{$v4.img}"
+                                                                                                    alt=""></a>
+                {if $v4.spot==spot1}<a href="{$smarty.const.__CONTROLLER__}/photo?coid={$v4.coid}&spot={$v4.spot}"><p>
+                大会现场</p></a>{/if}
+                {if $v4.spot==spot2}<a href="{$smarty.const.__CONTROLLER__}/photo?coid={$v4.coid}&spot={$v4.spot}"><p>
+                演讲实录</p></a>{/if}
+                {if $v4.spot==spot3}<a href="{$smarty.const.__CONTROLLER__}/photo?coid={$v4.coid}&spot={$v4.spot}"><p>
+                合影留念</p></a>{/if}
+            </div>
+            {/foreach}
+        </div>
+    </div>
+    {/if}
+    <div class="content">
+        <div class="title clear">
+            <img class="yellow_line fl" src="{$smarty.const.INDEX_IMAGES_URL}yellow.png" alt="">
+            <span class="title_span fl">大会日程</span>
+        </div>
+        <div class="tab">
+            <div class="tab_title clear">
+
+                {foreach $arrSchedule as $k5=>$v5}
+                <div class="fl tabHover">
+                    <p class="part">Part {$k5+1}</p>
+                    <p class="p1">{$v5.title}</p>
+                    <p class="p2">地点：{$v5.position}</p>
+                </div>
+                {/foreach}
+
+            </div>
+            {foreach $arrSchedule as $k5=>$v5}
+            <div class="tab_content1">
+                {$v5.schedule}
+            </div>
+            {/foreach}
+        </div>
+
+        <!-- 5.22修改部分 -->
+        <div class="content">
+            <div class="title clear">
+                <img class="yellow_line fl" src="{$smarty.const.INDEX_IMAGES_URL}yellow.png" alt="">
+                <span class="title_span fl">举办单位</span>
+            </div>
+
+            <div class="hold_address">
+                <img src="{$smarty.const.PUBLIC_UPLOAD}{$arrData['position_img']}" alt="">
+            </div>
+
+            <div class="whiteLineDiv">
+                <div class="thinLine"></div>
+                <div class="fatLine"></div>
+            </div>
+
+            <!-- 指导单位 -->
+            <div class="content">
+                <!--			<div class="title clear">
+                                <img class="yellow_line fl" src="{$smarty.const.INDEX_IMAGES_URL}yellow.png" alt="">
+                                <span class="title_span fl">指导单位</span>
+                            </div>-->
+                <div class="hold_address">
+                    <img src="{$smarty.const.PUBLIC_UPLOAD}{$arrData['coope_img']}" alt="">
+                </div>
+            </div>
+            <!-- 5.22修改部分 -->
+        </div>
+    </div>
+</div>
+{include file='Common/footer.html'}
+</body>
+<script src="{$smarty.const.INDEX_JS_URL}jquery-3.0.0.min.js"></script>
+<script src="{$smarty.const.INDEX_JS_URL}swiper.js"></script>
+<script src="{$smarty.const.INDEX_JS_URL}details.js"></script>
+<script>
+    $(".spot_record").children("div").eq(0).css("margin-left", "0px");
+    $("ul li:nth-child(1)").css("margin-left", "0px");
+    $("ul li:nth-child(6)").css("margin-left", "0px");
+    $(".tab_title div:nth-child(1)").addClass('tabBtnActive');
+    $('.tab_content1:first').addClass('content_show');
+    {
+        if $arrData['title2'] != ''}
+    $(".tab_title div").on('click', function () {
+        var index = $(this).index();
+        $(this).addClass('tabBtnActive').siblings().removeClass('tabBtnActive');
+        $(".tab_content1").eq(index).show().siblings(".tab_content1").hide();
+    });
+    {/
+        if}
+    var mySwiper1 = new Swiper('#swiper-container1', {
+    {
+        if $guestSize > 1}
+    pagination : '.swiper-pagination', { /
+    if}
+    paginationClickable :true,
+        autoHeight
+    :
+    true,
+    })
+    ;
+
+    var mySwiper2 = new Swiper('#swiper-container2', {
+    {
+        if $focusSize > 1}
+    pagination : '.swiper-pagination', { /
+    if}
+    autoplayDisableOnInteraction : false,
+
+    // paginationClickableClass : 'my-pagination-clickable',
+    })
+    ;
+
+
+</script>
+</html>

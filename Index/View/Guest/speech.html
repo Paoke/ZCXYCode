@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="聚焦最具争议的商业创新" />   
+        <title>云珠沙龙TIC</title>
+        <link rel="shortcut icon" href="{$smarty.const.INDEX_IMAGES_URL}favicon.ico">
+        <meta name="keywords" content="创业沙龙，众扶平台，创新创业，科技，想象力，资本" />  
+        <link rel="stylesheet" href="{$smarty.const.INDEX_CSS_URL}header_footer.css">
+        <link rel="stylesheet" href="{$smarty.const.INDEX_CSS_URL}speech.css">
+        <style>
+            .share .bdsharebuttonbox .bds_weixin { height:40px;margin-right:14px; background: url({$smarty.const.INDEX_IMAGES_URL}sj_icon01.png) no-repeat center center/32px 32px; }
+            .bdsharebuttonbox .qqzone { height:40px;margin-right:14px; background: url({$smarty.const.INDEX_IMAGES_URL}sj_icon02.png) no-repeat center center/32px 32px; }
+            .bdsharebuttonbox .sina { height:40px;margin-right:14px; background: url({$smarty.const.INDEX_IMAGES_URL}sj_icon03.png) no-repeat center center/32px 32px; }
+        </style>
+        <script>
+        function sharetoqqzone(title)  
+        {  
+         var uu=window.location.href;
+         var url=encodeURIComponent(uu);
+         var shareqqzonestring='http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?summary='+title+'&url='+url;  
+         window.open(shareqqzonestring,'newwindow','height=400,width=400,top=100,left=100');  
+        }  
+        function sharetosina(title)
+        {
+            var uu=window.location.href;
+            var url=encodeURIComponent(uu);
+            var sharesinastring='http://v.t.sina.com.cn/share/share.php?title='+title+'&url='+url+'&content=utf-8&sourceUrl='+url;  
+            window.open(sharesinastring,'newwindow','height=400,width=400,top=100,left=100');  
+        }
+    </script>
+    </head>
+    <body>	
+        {include file='Common/header.html'}
+        <div class="vedio">
+            {if $arrArticle['link']==""}
+            <img src="{$smarty.const.PUBLIC_UPLOAD}{$arrArticle['banner']}" alt="">
+            {else}
+            <a href="{$arrArticle['link']}" target="_blank"><img src="{$smarty.const.PUBLIC_UPLOAD}{$arrArticle['banner']}" alt=""></a>
+            {/if}
+        </div>
+        <div class="wrap clear">
+            <div class="left fl">
+                <p class="_p">{$arrArticle['title']}</p>
+                <div class="clear">
+                    <div class="share fl">
+                        
+                        <div class="bdsharebuttonbox" style="display:inline;">
+                                <span class="share_position">分享至</span>
+                                <a class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                                <a class="qqzone" onclick="sharetoqqzone('{$arrArticle['title']}')"><img src="{$smarty.const.INDEX_IMAGES_URL}sj_icon02.png" alt=""></a>
+                                <a class="sina" onclick="sharetosina('{$arrArticle['title']}')"><img src="{$smarty.const.INDEX_IMAGES_URL}sj_icon03.png" alt=""></a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="content_right_introduce clear">
+                    <div class="fl">
+                        <div class="redDiv"></div>
+                        <div class="whiteDiv">内容介绍</div>
+                    </div>
+                    <span class="scanNum fr">浏览次数:{$arrArticle['seetimes']}</span>
+                </div>
+                <div class="main">
+                    {$arrArticle['content']}
+                </div>
+                {if $arrRelate[0]==""}
+                {else}
+                <div class="line"></div>
+                <div class="relate">
+                    <p class="relate_title">相关演讲</p>
+                    <img src="{$smarty.const.PUBLIC_UPLOAD}{$arrArticle['speechimg']}" alt="">
+                    <p class="brilliant_focus_name">文健君 创捷供应链总裁</p>
+                    {foreach $arrRelate as $k1=>$v1}
+                    <a href="{$smarty.const.__MODULE__}/Guest/speech?arid={$v1.arid}"><p class="brilliant_focus_content">{$v1.title}</p></a>
+                    {/foreach}
+                </div>
+                {/if}
+            </div>
+            <div class="right fr">
+                <div class="guest_intro">
+                    <p class="guest_intro_int">嘉宾介绍</p>
+                    <div class="clear">
+                        <img class="fl guest_head" src="{$smarty.const.PUBLIC_UPLOAD}{$arrArticle['header']}" alt="">
+                        <div class="fl">
+                            <p class="name">{$arrArticle['name']}</p>
+                            <p class="position">{$arrArticle['job']}</p>
+                        </div>
+                    </div>
+                    <p class="right_introduce">
+                        {$arrArticle['introduce']}
+                    </p>
+                </div>
+                <div class="right_tic">
+                    <img src="{$smarty.const.INDEX_IMAGES_URL}logo_black.png" alt="">
+                    <p class="tic_introduce">
+                        TIC跨界创新大会涵括科技（Technology）、想象力（Imagination）、资本（Capital）三大主题，已经走进上海、广州、佛山等城市并与所在城市业态相结合。每届大会将吸引千余位来自不同行业的企业家参与其中，并得到主流媒体的关注与报道，已经成为企业、政府、行业组织，跨界创新经验交流以及产业资源整合的平台。
+                    </p>
+                </div>
+                <img src="{$smarty.const.INDEX_IMAGES_URL}speech_code.png" alt="">
+            </div>
+            
+        </div>
+        {include file='Common/footer.html'}
+    </body>
+    <script>
+ window._bd_share_config = {
+  "common" : {
+   "bdSnsKey" : {},
+   "bdText" : "",
+   "bdMini" : "2",
+   "bdUrl" : window.location.href,
+   "bdMiniList" : false,
+   "bdPic" : "",
+   "bdStyle" : "0",
+   
+   
+  },
+  "share" : { "bdSize" : "32"}
+ };
+ with (document)
+  0[(getElementsByTagName('head')[0] || body)
+    .appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='
+    + ~(-new Date() / 36e5)];
+</script>
+</html>

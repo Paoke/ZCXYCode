@@ -1,0 +1,20 @@
+[ 2017-07-11T15:09:18+08:00 ] 127.0.0.1 /index.php/Upload/20170711/5964799e7e153.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-11T15:09:34+08:00 ] 127.0.0.1 /index.php/Upload/20170711/596479aee4d01.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-07-11T15:10:29+08:00 ] 127.0.0.1 /index.php/Upload/20170711/596479aee4d01.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-07-11T15:10:37+08:00 ] 127.0.0.1 /index.php/Upload/20170711/596479aee4d01.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+

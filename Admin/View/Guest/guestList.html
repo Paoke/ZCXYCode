@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="renderer" content="webkit|ie-comp|ie-stand">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+        <meta http-equiv="Cache-Control" content="no-siteapp"/>
+        <!--[if lt IE 9]>
+        <script type="text/javascript" src="{$smarty.const.ADMIN_LIB_JS_URL}html5.js"></script>
+        <script type="text/javascript" src="{$smarty.const.ADMIN_LIB_JS_URL}respond.min.js"></script>
+        <script type="text/javascript" src="{$smarty.const.ADMIN_LIB_JS_URL}PIE_IE678.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" type="text/css" href="{$smarty.const.ADMIN_STATIC_HUI_CSS_URL}H-ui.min.css"/>
+        <link rel="stylesheet" type="text/css" href="{$smarty.const.ADMIN_STATIC_HUI_CSS_URL}H-ui.admin.css"/>
+        <link rel="stylesheet" type="text/css" href="{$smarty.const.ADMIN_LIB_HUI_ICONFONT_CSS_URL}iconfont.css"/>
+        <link rel="stylesheet" type="text/css" href="{$smarty.const.ADMIN_LIB_ICHECK_CSS_URL}icheck.css"/>
+        <link rel="stylesheet" type="text/css" href="{$smarty.const.ADMIN_STATIC_HUI_SKIN_DEFAULT_CSS_URL}skin.css" id="skin"/>
+        <link rel="stylesheet" type="text/css" href="{$smarty.const.ADMIN_STATIC_HUI_CSS_URL}style.css"/>
+        <!--[if IE 6]>
+        <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js"></script>
+        <script>DD_belatedPNG.fix('*');</script>
+        <![endif]-->
+        <title>云珠沙龙TIC - 嘉宾管理</title>
+    </head>
+    <body>
+        <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 嘉宾管理 <span class="c-gray en">&gt;</span> 嘉宾列表<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
+                                                                                                                     href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">
+                    &#xe68f;</i></a></nav>
+        <div class="page-container">
+
+            <div class="cl pd-5 bg-1 bk-gray mt-20"><span class="l"><a href="javascript:;"
+                                                                       onclick="guest_add('添加嘉宾', '{$smarty.const.__CONTROLLER__}/addGuest', '780', '700')"
+                                                                       class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加嘉宾</a></span>
+                <span class="r">共有数据：<strong>{$size}</strong> 条</span></div>
+            <div class="mt-20">
+                <table class="table table-border table-bordered table-hover table-bg table-sort">
+                    <thead>
+                        <tr class="text-c">
+                            <!--                            <th width="25"><input type="checkbox" name="" value=""></th>-->
+                            <th width="80">ID</th>
+                            <th width="100">姓名</th>
+                            <th width="90">职位</th>
+                            <th width="150">头像</th>
+                            <th width="130">添加时间</th>
+                            <th width="60">首页推荐</th>
+                            <th width="100">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {foreach $arrData as $k1=>$v1} 
+                        <tr class="text-c">
+                            <!--                            <td><input type="checkbox" value="{$v1.guid}" name=""></td>-->
+                            <td>{$v1.guid}</td>
+                            <td>{$v1.name}</td>
+                            <td>{$v1.job}</td>
+                            <td><img src="/Upload/{$v1.header}" style="width:70px;height:70px;border-radius: 70px;"></td>
+                            <td>{$v1.addtime}</td>
+                            <td class="td-status">
+                                {if $v1.index_status==0}
+                                <span class="label label-defaunt radius">未推荐</span>
+                                {else}
+                                <span class="label label-success radius">已推荐</span>
+                                {/if}
+                            </td>
+                            <td class="td-manage">
+                                {if $v1.index_status==0}
+                                <a style="text-decoration:none" 
+                                   onClick="guest_start(this, '{$v1.guid}', '{$max}')" href="javascript:;"title="推荐">
+                                    <i class="Hui-iconfont">&#xe603;</i>
+                                </a> 
+                                {else}
+                                <a style="text-decoration:none" 
+                                   onClick="guest_stop(this, '{$v1.guid}', '0')" href="javascript:;" title="撤销">
+                                    <i class="Hui-iconfont">&#xe6de;</i>
+                                </a>
+                                {/if}
+                                <a title="编辑" href="javascript:;"
+                                   onclick="guest_edit('编辑', '{$smarty.const.__CONTROLLER__}/editGuest?guid={$v1.guid}', '4', '780', '700')"
+                                   class="ml-5"
+                                   style="text-decoration:none"><i
+                                        class="Hui-iconfont">&#xe6df;</i></a>
+                                <a title="删除" href="javascript:;" onclick="guest_del(this, '{$v1.guid}')" class="ml-5" style="text-decoration:none"><i
+                                        class="Hui-iconfont">&#xe6e2;</i></a></td>
+                        </tr>
+                        {/foreach}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script type="text/javascript" src="{$smarty.const.ADMIN_LIB_JQUERY_JS_URL}jquery.min.js"></script>
+        <script type="text/javascript" src="{$smarty.const.ADMIN_LIB_LAYER_JS_URL}layer.js"></script>
+        <script type="text/javascript" src="{$smarty.const.ADMIN_LIB_LAYPAGE_JS_URL}laypage.js"></script>
+        <script type="text/javascript" src="{$smarty.const.ADMIN_LIB_MY97DATEPICKER_JS_URL}WdatePicker.js"></script>
+        <script type="text/javascript" src="{$smarty.const.ADMIN_LIB_DATATABLES_JS_URL}jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="{$smarty.const.ADMIN_STATIC_HUI_JS_URL}H-ui.js"></script>
+        <script type="text/javascript" src="{$smarty.const.ADMIN_STATIC_HUI_JS_URL}H-ui.admin.js"></script>
+        {literal}
+        <script type="text/javascript">
+                                    $(function () {
+                                        $('.table-sort').dataTable({
+                  
+                                            "aaSorting": [[0, "desc"]], //默认第几个排序
+                                            "bStateSave": true, //状态保存
+                                            "aoColumnDefs": [
+                                                //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+                                                {"orderable": false, "aTargets": [5]}// 制定列不参与排序
+                                            ],
+                                        });
+                                        $('.table-sort tbody').on('click', 'tr', function () {
+                                            if ($(this).hasClass('selected')) {
+                                                $(this).removeClass('selected');
+                                            } else {
+                                                table.$('tr.selected').removeClass('selected');
+                                                $(this).addClass('selected');
+                                            }
+                                        });
+                                    });
+                                    /*嘉宾-添加*/
+                                    function guest_add(title, url, w, h) {
+                                        layer_show(title, url, w, h);
+                                    }
+                                    /*嘉宾-编辑*/
+                                    function guest_edit(title, url, id, w, h) {
+                                        layer_show(title, url, w, h);
+                                    }
+                                    /*嘉宾-删除*/
+                                    function guest_del(obj, id) {
+
+                                        layer.confirm('确认要删除吗？', function (index) {
+                                            var guid = id;
+                                            var data = {guid: guid};
+                                            $.post('/index.php/Admin/Guest/delGuest', data, function (ret) {
+                                                if (ret == 'true') {
+                                                    $(obj).parents("tr").remove();
+                                                    layer.msg('已删除!', {icon: 1, time: 1000});
+                                                } else {
+                                                    layer.msg('删除失败!', {icon: 2, time: 1000});
+                                                }
+
+                                            }, 'text');
+
+                                        });
+                                    }
+                                    /*嘉宾-首页撤销*/
+                                    function guest_stop(obj, id, status) {
+                                        layer.confirm('确认要撤销吗？', function (index) {
+                                            var guid = id;
+                                            var data = {guid: guid, status: status};
+                                            $.post('/index.php/Admin/Guest/startStopGuest', data, function (ret) {
+                                                if (ret == 'true') {
+                                                    $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="guest_start(this,' + id + ',1)" href="javascript:;" title="推荐"><i class="Hui-iconfont">&#xe603;</i></a>');
+                                                    $(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">未推荐</span>');
+                                                    $(obj).remove();
+                                                    layer.msg('已撤销!', {icon: 5, time: 1000},function(){
+                                                        window.location.reload();
+                                                    });
+                                                } else {
+                                                    layer.msg('撤销失败!', {icon: 2, time: 1000});
+                                                }
+                                            }, 'text');
+
+                                        });
+                                    }
+
+                                    /*嘉宾-首页推荐*/
+                                    function guest_start(obj, id, status) {
+                                        layer.confirm('确认要推荐吗？', function (index) {
+                                            var guid = id;
+                                            var data = {guid: guid, status: status};
+                                            $.post('/index.php/Admin/Guest/startStopGuest', data, function (ret) {
+                                                if (ret == 'true') {
+                                                    $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="guest_stop(this,' + id + ',0)" href="javascript:;" title="撤销"><i class="Hui-iconfont">&#xe6de;</i></a>');
+                                                    $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已推荐</span>');
+                                                    $(obj).remove();
+                                                    layer.msg('已推荐!', {icon: 6, time: 1000},function(){
+                                                        window.location.reload();
+                                                    });
+                                                } else {
+                                                    layer.msg('推荐失败!', {icon: 2, time: 1000});
+                                                }
+                                            }, 'text');
+
+                                        });
+                                    }
+        </script>
+        {/literal}
+    </body>
+</html>

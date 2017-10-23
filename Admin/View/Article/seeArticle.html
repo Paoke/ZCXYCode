@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>嘉宾演讲</title>
+	<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}speech.css">
+</head>
+<body>
+	
+	<div class="vedio">
+		<img src="/Upload/{$arrArticle['banner']}" alt="">
+	</div>
+	<div class="wrap clear">
+		<div class="left fl">
+			<p class="_p">共同探讨中国产业转型发展之路</p>
+			<div class="clear">
+				<div class="share fl">
+					<span>分享至</span>
+					<img src="{$smarty.const.ADMIN_IMG_URL}share_wx.png" alt="">
+					<img src="{$smarty.const.ADMIN_IMG_URL}share_wb.png" alt="">
+					<img src="{$smarty.const.ADMIN_IMG_URL}share_qq.png" alt="">
+				</div>
+				
+			</div>
+			<div class="content_right_introduce clear">
+				<div class="fl">
+					<div class="redDiv"></div>
+					<div class="whiteDiv">内容介绍</div>
+				</div>
+				<span class="scanNum fr">浏览次数:{$arrArticle['seetimes']}</span>
+			</div>
+			<div class="main">
+				{$arrArticle['content']}
+			</div>
+
+
+		</div>
+		<div class="right fr">
+			<div class="guest_intro">
+				<p class="guest_intro_int">嘉宾介绍</p>
+					<div class="clear">
+						<img class="fl guest_head" src="/Upload/{$arrArticle['header']}" alt="">
+						<div class="fl">
+							<p class="name">{$arrArticle['name']}</p>
+							<p class="position">{$arrArticle['job']}</p>
+						</div>
+					</div>
+                                <p class="right_introduce">
+                                    {$arrArticle['introduce']}
+                                </p>
+			</div>
+			<div class="right_tic">
+				<img src="{$smarty.const.ADMIN_IMG_URL}logo_black.png" alt="">
+				<p class="tic_introduce">
+					TIC跨界创新大会涵括科技（Technology）、想象力（Imagination）、资本（Capital）三大主题，已经走进上海、广州、佛山等城市并与所在城市业态相结合。每届大会将吸引千余位来自不同行业的企业家参与其中，并得到主流媒体的关注与报道，已经成为企业、政府、行业组织，跨界创新经验交流以及产业资源整合的平台。
+				</p>
+			</div>
+			<img src="{$smarty.const.ADMIN_IMG_URL}speech_code.png" alt="">
+		</div>
+	</div>
+</body>
+</html>
